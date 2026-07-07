@@ -444,7 +444,7 @@ window.addEventListener("scroll", () => {
    BIRTHDAY COUNTDOWN
 ============================================ */
 
-const birthday = new Date("July 27, 2026 00:00:00").getTime();
+const birthday = new Date("July 19, 2026 00:00:00").getTime();
 
 const countdownBox = document.createElement("div");
 
