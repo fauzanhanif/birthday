@@ -1,1 +1,1196 @@
-body{margin:0;font-family:Arial;background:#e8ede6}.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#556b2f;color:#fff}.card{max-width:700px;margin:40px auto;padding:20px;background:#fff;border-radius:12px}.hidden{display:none}button{padding:12px 20px}
+/* ===================================================
+   TAYLOR SWIFT FOLKLORE THEME
+=================================================== */
+
+:root{
+
+    --forest:#2F4F3A;
+    --forest2:#3D5A4B;
+    --cream:#F8F5EE;
+    --beige:#DCC9A9;
+    --gold:#C7A76C;
+    --white:#ffffff;
+    --dark:#1F2A23;
+
+    --shadow:0 20px 60px rgba(0,0,0,.2);
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--cream);
+
+    color:var(--dark);
+
+    overflow-x:hidden;
+
+}
+
+/* ================= Scroll ================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ece8df;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--forest);
+
+    border-radius:20px;
+
+}
+
+/* ================= Loader ================= */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#1c241f;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    transition:1s;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-content h1{
+
+    font-size:80px;
+
+    color:white;
+
+    font-family:'Cormorant Garamond',serif;
+
+    letter-spacing:8px;
+
+}
+
+.loader-content p{
+
+    color:#ddd;
+
+    margin-top:20px;
+
+}
+
+/* ================= Hero ================= */
+
+.hero{
+
+    position:relative;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    backdrop-filter:blur(2px);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.subtitle{
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    opacity:.8;
+
+}
+
+.hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:95px;
+
+    margin-top:10px;
+
+}
+
+.hero h3{
+
+    font-size:32px;
+
+    font-weight:300;
+
+}
+
+.hero p{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+}
+
+.hero button{
+
+    margin-top:40px;
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:var(--beige);
+
+    color:var(--forest);
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    font-size:18px;
+
+}
+
+.hero button:hover{
+
+    transform:translateY(-8px);
+
+    background:white;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+
+}
+
+/* ================= Section ================= */
+
+section{
+
+    padding:120px 10%;
+
+}
+
+/* ================= Letter ================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:70px;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.container h2{
+
+    font-size:60px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    margin-bottom:35px;
+
+}
+
+.container p{
+
+    font-size:20px;
+
+    line-height:2;
+
+    margin-bottom:25px;
+
+}
+
+.quote{
+
+    font-size:34px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:var(--forest2);
+
+}
+/* ===================================================
+   GALLERY
+=================================================== */
+
+#gallery{
+
+    background:#f4f0e8;
+
+}
+
+#gallery h2{
+
+    text-align:center;
+
+    font-size:60px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    margin-bottom:70px;
+
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+}
+
+.photo{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    background:white;
+
+    padding:12px;
+
+    transition:.5s;
+
+}
+
+.photo img{
+
+    width:100%;
+
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    transition:.6s;
+
+}
+
+.photo:hover{
+
+    transform:translateY(-12px) rotate(-2deg);
+
+}
+
+.photo:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.photo::after{
+
+    content:"Our Memory";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:15px;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.photo:hover::after{
+
+    opacity:1;
+
+}
+
+
+/* ===================================================
+   TIMELINE
+=================================================== */
+
+#timeline{
+
+    background:linear-gradient(
+        to bottom,
+        #f8f5ee,
+        #eef2ea
+    );
+
+}
+
+#timeline h2{
+
+    text-align:center;
+
+    font-size:60px;
+
+    margin-bottom:70px;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.timeline{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    width:4px;
+
+    height:100%;
+
+    background:var(--gold);
+
+    transform:translateX(-50%);
+
+}
+
+.item{
+
+    width:45%;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:50px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+}
+
+.item:nth-child(odd){
+
+    margin-right:auto;
+
+}
+
+.item:nth-child(even){
+
+    margin-left:auto;
+
+}
+
+.item::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:35px;
+
+    width:18px;
+
+    height:18px;
+
+    background:var(--forest);
+
+    border-radius:50%;
+
+}
+
+.item:nth-child(odd)::before{
+
+    right:-48px;
+
+}
+
+.item:nth-child(even)::before{
+
+    left:-48px;
+
+}
+
+.item h3{
+
+    color:var(--forest);
+
+    margin-bottom:10px;
+
+}
+
+
+/* ===================================================
+   GIFT
+=================================================== */
+
+#gift{
+
+    background:#f6f3ec;
+
+    text-align:center;
+
+}
+
+.gift-box{
+
+    max-width:550px;
+
+    margin:auto;
+
+}
+
+.gift-box i{
+
+    font-size:110px;
+
+    color:var(--gold);
+
+    margin-bottom:30px;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+.gift-box h2{
+
+    font-size:55px;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.gift-box p{
+
+    margin:25px 0;
+
+}
+
+.gift-box button{
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:var(--forest);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:18px;
+
+}
+
+.gift-box button:hover{
+
+    background:var(--forest2);
+
+    transform:scale(1.05);
+
+}
+
+
+/* ===================================================
+   SURPRISE
+=================================================== */
+
+#surprise{
+
+    background:
+    linear-gradient(rgba(15,20,18,.7),rgba(15,20,18,.7)),
+    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+
+    background-position:center;
+
+    color:white;
+
+    text-align:center;
+
+}
+
+.surprise-card{
+
+    max-width:750px;
+
+    margin:auto;
+
+    padding:70px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:25px;
+
+}
+
+.surprise-card h1{
+
+    font-size:80px;
+
+}
+
+.surprise-card h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:55px;
+
+    margin:20px 0;
+
+}
+
+.surprise-card p{
+
+    line-height:2;
+
+}
+
+
+/* ===================================================
+   FOOTER
+=================================================== */
+
+footer{
+
+    background:#1f2a23;
+
+    color:white;
+
+    text-align:center;
+
+    padding:90px 20px;
+
+}
+
+.footer h2{
+
+    font-size:42px;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.footer h3{
+
+    margin-top:30px;
+
+}
+
+#star{
+
+    font-size:42px;
+
+    cursor:pointer;
+
+    margin-bottom:25px;
+
+    transition:.3s;
+
+}
+
+#star:hover{
+
+    transform:rotate(25deg) scale(1.2);
+
+}
+
+
+/* ===================================================
+   POPUP
+=================================================== */
+
+#popup{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.65);
+
+    z-index:9999;
+
+}
+
+.popup-card{
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:20px;
+
+    width:420px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.popup-card h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:45px;
+
+}
+
+.popup-card p{
+
+    margin:20px 0;
+
+}
+
+.popup-card button{
+
+    padding:14px 32px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:var(--forest);
+
+    color:white;
+
+    cursor:pointer;
+
+}
+/* ===================================================
+   ANIMATION
+=================================================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:all .8s ease;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.fade{
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+.fade.show{
+
+    opacity:1;
+
+}
+
+/* ===================================================
+   LEAVES
+=================================================== */
+
+#leaves{
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:1;
+
+}
+
+.leaf{
+
+    position:absolute;
+
+    font-size:24px;
+
+    animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+    from{
+
+        transform:
+        translateY(-120px)
+        rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+
+        opacity:.2;
+
+    }
+
+}
+
+/* ===================================================
+   FIREFLY
+=================================================== */
+
+.firefly{
+
+    position:fixed;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:#ffe680;
+
+    box-shadow:
+
+    0 0 15px #ffe680,
+
+    0 0 30px #ffe680;
+
+    animation:blink 2s infinite;
+
+    z-index:2;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:.2;
+
+    }
+
+}
+
+/* ===================================================
+   CURSOR GLOW
+=================================================== */
+
+.cursor{
+
+    position:fixed;
+
+    width:28px;
+
+    height:28px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+    backdrop-filter:blur(6px);
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    transition:.05s;
+
+}
+
+/* ===================================================
+   BUTTON EFFECT
+=================================================== */
+
+button{
+
+    transition:
+
+    transform .3s,
+
+    box-shadow .3s;
+
+}
+
+button:hover{
+
+    box-shadow:
+
+    0 15px 30px rgba(0,0,0,.2);
+
+}
+
+/* ===================================================
+   PHOTO EFFECT
+=================================================== */
+
+.photo{
+
+    cursor:pointer;
+
+}
+
+.photo:hover{
+
+    box-shadow:
+
+    0 25px 45px rgba(0,0,0,.25);
+
+}
+
+/* ===================================================
+   CARD EFFECT
+=================================================== */
+
+.container,
+
+.item,
+
+.popup-card,
+
+.surprise-card{
+
+    transition:.4s;
+
+}
+
+.container:hover,
+
+.item:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* ===================================================
+   MOBILE
+=================================================== */
+
+@media(max-width:992px){
+
+.hero h1{
+
+    font-size:70px;
+
+}
+
+.hero h3{
+
+    font-size:26px;
+
+}
+
+.container{
+
+    padding:45px;
+
+}
+
+.timeline::before{
+
+    left:20px;
+
+}
+
+.item{
+
+    width:100%;
+
+    margin-left:40px!important;
+
+}
+
+.item::before{
+
+    left:-30px!important;
+
+}
+
+}
+
+/* ===================================================
+   PHONE
+=================================================== */
+
+@media(max-width:768px){
+
+.hero{
+
+    padding:20px;
+
+}
+
+.hero h1{
+
+    font-size:52px;
+
+}
+
+.hero h3{
+
+    font-size:22px;
+
+}
+
+.hero p{
+
+    font-size:16px;
+
+}
+
+.hero button{
+
+    width:100%;
+
+}
+
+.container{
+
+    padding:30px;
+
+}
+
+.container h2{
+
+    font-size:40px;
+
+}
+
+.container p{
+
+    font-size:17px;
+
+}
+
+#gallery h2,
+
+#timeline h2{
+
+    font-size:42px;
+
+}
+
+.gallery-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.photo img{
+
+    height:280px;
+
+}
+
+.gift-box h2{
+
+    font-size:42px;
+
+}
+
+.surprise-card{
+
+    padding:35px;
+
+}
+
+.surprise-card h2{
+
+    font-size:38px;
+
+}
+
+.footer h2{
+
+    font-size:30px;
+
+}
+
+.popup-card{
+
+    width:90%;
+
+}
+
+}
+
+/* ===================================================
+   EXTRA
+=================================================== */
+
+img{
+
+    user-select:none;
+
+}
+
+section{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:160px;
+
+    background:
+
+    linear-gradient(
+
+    transparent,
+
+    var(--cream)
+
+    );
+
+}
