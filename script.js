@@ -1,0 +1,1 @@
+document.getElementById('openBtn').onclick=()=>{document.getElementById('letter').classList.remove('hidden');document.getElementById('letter').scrollIntoView({behavior:'smooth'});}

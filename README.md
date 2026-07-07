@@ -1,0 +1,1 @@
+Tambahkan foto ke folder images dan musik ke folder music jika diinginkan.
