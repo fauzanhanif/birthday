@@ -439,3 +439,194 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+/* ============================================
+   BIRTHDAY COUNTDOWN
+============================================ */
+
+const birthday = new Date("July 27, 2026 00:00:00").getTime();
+
+const countdownBox = document.createElement("div");
+
+countdownBox.id = "countdown";
+
+document.body.appendChild(countdownBox);
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+
+    const distance = birthday - now;
+
+    if(distance <= 0){
+
+        countdownBox.innerHTML = "🎉 Happy Birthday Sasa! 🎉";
+
+        return;
+
+    }
+
+    const days = Math.floor(distance / (1000*60*60*24));
+
+    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+    const minutes = Math.floor((distance%(1000*60*60))/60000);
+
+    countdownBox.innerHTML =
+        `${days} Days • ${hours} Hours • ${minutes} Minutes`;
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,60000);
+
+
+/* ============================================
+   MUSIC CONTROL
+============================================ */
+
+const musicBtn = document.createElement("button");
+
+musicBtn.id="musicBtn";
+
+musicBtn.innerHTML="🎵";
+
+document.body.appendChild(musicBtn);
+
+musicBtn.onclick=()=>{
+
+    if(music.paused){
+
+        music.play();
+
+        musicBtn.innerHTML="🎵";
+
+    }else{
+
+        music.pause();
+
+        musicBtn.innerHTML="🔇";
+
+    }
+
+};
+
+
+/* ============================================
+   KEYBOARD SHORTCUT
+============================================ */
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="m" || e.key==="M"){
+
+        if(music.paused){
+
+            music.play();
+
+        }else{
+
+            music.pause();
+
+        }
+
+    }
+
+});
+
+
+/* ============================================
+   FIREFLY MOVEMENT
+============================================ */
+
+setInterval(()=>{
+
+    document.querySelectorAll(".firefly").forEach(fly=>{
+
+        fly.style.left=Math.random()*100+"vw";
+
+        fly.style.top=Math.random()*100+"vh";
+
+    });
+
+},4000);
+
+
+/* ============================================
+   RANDOM QUOTES
+============================================ */
+
+const quotes=[
+
+"Don't feel small.",
+
+"Long live all the magic we made.",
+
+"You are someone's favorite chapter.",
+
+"Everything you lose is a step you take.",
+
+"Hold on to the memories."
+
+];
+
+setInterval(()=>{
+
+    const q=document.querySelector(".quote");
+
+    if(q){
+
+        q.innerHTML=quotes[Math.floor(Math.random()*quotes.length)];
+
+    }
+
+},12000);
+
+
+/* ============================================
+   PAGE TITLE ANIMATION
+============================================ */
+
+const titles=[
+
+"Happy Birthday 🤍",
+
+"Sasa ✨",
+
+"Long Live 🌙",
+
+"Folklore 🍂"
+
+];
+
+let titleIndex=0;
+
+setInterval(()=>{
+
+    document.title=titles[titleIndex];
+
+    titleIndex++;
+
+    if(titleIndex>=titles.length){
+
+        titleIndex=0;
+
+    }
+
+},2500);
+
+
+/* ============================================
+   FINAL MESSAGE
+============================================ */
+
+window.addEventListener("scroll",()=>{
+
+    if(window.innerHeight+window.scrollY>=document.body.offsetHeight-50){
+
+        console.log("Long Live all the magic we made ❤️");
+
+    }
+
+});
