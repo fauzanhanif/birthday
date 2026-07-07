@@ -1194,3 +1194,87 @@ section{
     );
 
 }
+
+/* Shooting Star */
+
+.shooting-star{
+
+    position:fixed;
+
+    width:120px;
+
+    height:2px;
+
+    background:white;
+
+    box-shadow:0 0 15px white;
+
+    transform:rotate(-35deg);
+
+    animation:shoot 2s linear forwards;
+
+    z-index:999;
+
+}
+
+@keyframes shoot{
+
+    from{
+
+        opacity:1;
+
+        transform:translate(0,0) rotate(-35deg);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:translate(-800px,400px) rotate(-35deg);
+
+    }
+
+}
+
+/* Lightbox */
+
+#lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.85);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+#lightbox img{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    border-radius:20px;
+
+}
+
+/* Night Mode */
+
+body.night{
+
+    background:#162019;
+
+    color:white;
+
+    transition:1s;
+
+}
